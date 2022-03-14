@@ -1,9 +1,13 @@
 # Main program that runs the quiz
 
 import os
+import tkinter as tk
+import random
 
 if __name__ == "__main__":
+    # initial book keeping and iterables we'll need
     cwd = os.getcwd()
+    random.seed()
     symbolNames = [
         'Ascendant Realm', 'Commune', 'Darkness', 'Drink', 'Earth', 'Enter', 'Fleet',
         'Black Garden', 'Give', 'Guardian', 'Black Heart', 'Hive', 'Kill', 'Light', 
@@ -19,4 +23,16 @@ if __name__ == "__main__":
         'Witness': 0, 'Worm': 0, 'Worship': 0
         }
 
-    print(symbolDict[symbolNames[0]])
+    # initiate the tkinter window
+    window = tk.Tk()
+    
+    # randomly choose an image to be quizzed
+    correct = random.choice(symbolNames)
+
+    # open the associated file and pack it into a frame
+    
+
+    # randomly choose the position of the 4 buttons with symbol names
+
+    # determine if correct name was clicked, either loop with a new symbol or end the quiz
+
