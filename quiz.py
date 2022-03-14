@@ -16,11 +16,12 @@ if __name__ == "__main__":
     ]
 
     symbolDict = {
-        'Ascendant Realm': 0, 'Commune': 0, 'Darkness': 0, 'Drink': 0, 'Earth': 0, 
-        'Enter': 0, 'Fleet': 0, 'Black Garden': 0, 'Give': 0, 'Guardian': 0, 
-        'Black Heart': 0, 'Hive': 0, 'Kill': 0, 'Light': 0, 'Love': 0, 'Pyramid': 0, 
-        'Remember': 0, 'Savathun': 0, 'Scorn': 0, 'Stop': 0, 'Tower': 0, 'Traveler': 0,
-        'Witness': 0, 'Worm': 0, 'Worship': 0
+        'Ascendant Realm': 'ascend.jpg', 'Commune': 'commune.jpg', 'Darkness': 'darkness.jpg', 'Drink': 'drink.jpg',
+        'Earth': 'earth.jpg', 'Enter': 'enter.jpg', 'Fleet': 'fleet.jpg', 'Black Garden': 'garden.jpg', 
+        'Give': 'give.jpg', 'Guardian': 'guardian.jpg', 'Black Heart': 'heart.jpg', 'Hive': 'hive.jpg', 'Kill': 'kill.jpg', 
+        'Light': 'light.jpg', 'Love': 'love.jpg', 'Pyramid': 'pyramid.jpg', 'Remember': 'remember.jpg', 
+        'Savathun': 'savathun.jpg', 'Scorn': 'scorn.jpg', 'Stop': 'stop.jpg', 'Tower': 'tower.jpg', 'Traveler': 'traveler.jpg',
+        'Witness': 'witness.jpg', 'Worm': 'worm.jpg', 'Worship': 'worship.jpg'
         }
 
     # initiate the tkinter window
@@ -30,7 +31,7 @@ if __name__ == "__main__":
     correct = random.choice(symbolNames)
 
     # open the associated file and pack it into a frame
-    
+
 
     # randomly choose the position of the 4 buttons with symbol names
 
