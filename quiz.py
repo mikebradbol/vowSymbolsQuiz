@@ -27,13 +27,13 @@ if __name__ == "__main__":
     # initiate the tkinter window
     window = tk.Tk()
     
-    # randomly choose an image to be quizzed
-    correct = random.choice(symbolNames)
+    # randomly choose the four names for the buttons and which of them will be the symbol shown
+    buttons = random.choices(symbolNames, k=4)
+    correct = random.choice(buttons)
+    print(buttons)
+    print(correct)
 
     # open the associated file and pack it into a frame
-
-
-    # randomly choose the position of the 4 buttons with symbol names
 
     # determine if correct name was clicked, either loop with a new symbol or end the quiz
 
