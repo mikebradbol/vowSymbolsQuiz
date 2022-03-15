@@ -50,7 +50,7 @@ if __name__ == "__main__":
             score += 1
             gameLoop()
         else:
-            print('wrong')
+            gameOver()
     
     # build the image for the main game screen
     def gameLoop():
@@ -59,6 +59,8 @@ if __name__ == "__main__":
         for widget in frame.winfo_children():
             widget.destroy()
         img = ImageTk.PhotoImage(Image.open(symbolDict[correct]))
+        scoreLabel = tk.Label(frame, text=str(score))
+        scoreLabel.pack()
         label = tk.Label(frame, image=img)
         label.pack()
         button0 = tk.Button(frame, text=buttons[0], command=lambda n=0: check(n))
@@ -69,6 +71,15 @@ if __name__ == "__main__":
         button2.pack()
         button3 = tk.Button(frame, text=buttons[3], command=lambda n=3: check(n))
         button3.pack()
+        frame.pack()
+        tk.mainloop()
+
+    # build the game over screen
+    def gameOver():
+        for widget in frame.winfo_children():
+            widget.destroy()
+        label = tk.Label(frame, text='Game Over! Your final score was ' + str(score))
+        label.pack()
         frame.pack()
         tk.mainloop()
 
