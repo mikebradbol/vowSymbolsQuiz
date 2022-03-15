@@ -31,6 +31,7 @@ if __name__ == "__main__":
     # initiate the tkinter window
     window = tk.Tk()
     window.title('Vow Symbol Quiz')
+    frame = tk.Frame(window)
 
     # randomly choose 4 symbol names and the image to be shown
     def getSymbols():
@@ -46,7 +47,8 @@ if __name__ == "__main__":
     def check(button):
         global score
         if correct == buttons[button]:
-            print('correct')
+            score += 1
+            gameLoop()
         else:
             print('wrong')
     
@@ -54,18 +56,20 @@ if __name__ == "__main__":
     def gameLoop():
         getSymbols()
         getCorrect()
+        for widget in frame.winfo_children():
+            widget.destroy()
         img = ImageTk.PhotoImage(Image.open(symbolDict[correct]))
-        print(symbolDict[correct])
-        label = tk.Label(window, image=img)
+        label = tk.Label(frame, image=img)
         label.pack()
-        button0 = tk.Button(text=buttons[0], command=lambda n=0: check(n))
+        button0 = tk.Button(frame, text=buttons[0], command=lambda n=0: check(n))
         button0.pack()
-        button1 = tk.Button(text=buttons[1], command=lambda n=1: check(n))
+        button1 = tk.Button(frame, text=buttons[1], command=lambda n=1: check(n))
         button1.pack()
-        button2 = tk.Button(text=buttons[2], command=lambda n=2: check(n))
+        button2 = tk.Button(frame, text=buttons[2], command=lambda n=2: check(n))
         button2.pack()
-        button3 = tk.Button(text=buttons[3], command=lambda n=3: check(n))
+        button3 = tk.Button(frame, text=buttons[3], command=lambda n=3: check(n))
         button3.pack()
+        frame.pack()
         tk.mainloop()
 
     # begin the game
