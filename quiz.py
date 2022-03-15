@@ -3,6 +3,7 @@
 import os
 import tkinter as tk
 import random
+from PIL import Image, ImageTk
 
 if __name__ == "__main__":
     # initial book keeping and iterables we'll need
@@ -22,7 +23,7 @@ if __name__ == "__main__":
         'Light': 'light.jpg', 'Love': 'love.jpg', 'Pyramid': 'pyramid.jpg', 'Remember': 'remember.jpg', 
         'Savathun': 'savathun.jpg', 'Scorn': 'scorn.jpg', 'Stop': 'stop.jpg', 'Tower': 'tower.jpg', 'Traveler': 'traveler.jpg',
         'Witness': 'witness.jpg', 'Worm': 'worm.jpg', 'Worship': 'worship.jpg'
-        }
+    }
 
     # initiate the tkinter window
     window = tk.Tk()
@@ -30,10 +31,15 @@ if __name__ == "__main__":
     # randomly choose the four names for the buttons and which of them will be the symbol shown
     buttons = random.choices(symbolNames, k=4)
     correct = random.choice(buttons)
-    print(buttons)
-    print(correct)
 
     # open the associated file and pack it into a frame
+    img = ImageTk.PhotoImage(Image.open(symbolDict[correct]))
+    label = tk.Label(window, image=img)
+    label.pack()    
+    print(correct)
+    tk.mainloop()
+
+
 
     # determine if correct name was clicked, either loop with a new symbol or end the quiz
 
