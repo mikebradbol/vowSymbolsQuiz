@@ -74,12 +74,20 @@ if __name__ == "__main__":
         frame.pack()
         tk.mainloop()
 
+    # restarts the game from game over 
+    def restart():
+        global score
+        score = 0
+        gameLoop()
+
     # build the game over screen
     def gameOver():
         for widget in frame.winfo_children():
             widget.destroy()
         label = tk.Label(frame, text='Game Over! Your final score was ' + str(score))
         label.pack()
+        button = tk.Button(frame, text='Start a new game', command=restart)
+        button.pack()
         frame.pack()
         tk.mainloop()
 
